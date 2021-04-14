@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/prefabs/Plataforma.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/prefabs/CarroGrosso.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node2D"]
+
+[node name="Parede" parent="." instance=ExtResource( 1 )]
+position = Vector2( -15.2515, 239.817 )
+rotation = 1.5708
+
+[node name="Plataforma" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256.279, 479.158 )
+
+[node name="Plataforma2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768.751, 479.024 )
+
+[node name="Plataforma3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1277.29, 553.186 )
+rotation = 0.290258
+
+[node name="Plataforma4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1768.88, 700.749 )
+rotation = 0.290258
+
+[node name="Plataforma5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2280.24, 776.117 )
+rotation = 0.000237286
+
+[node name="Plataforma6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2774.02, 649.447 )
+rotation = -0.522085
+
+[node name="Plataforma7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3219.49, 393.548 )
+rotation = -0.522085
+
+[node name="Plataforma8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3709.69, 261.528 )
+
+[node name="Plataforma9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4227.92, 252.182 )
+
+[node name="Plataforma10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4744.04, 259.317 )
+
+[node name="Plataforma11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5260.16, 254.561 )
+
+[node name="Plataforma12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5764.77, 254.492 )
+scale = Vector2( 0.6, 1 )
+
+[node name="Plataforma13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6171.76, 254.492 )
+scale = Vector2( 0.6, 1 )
+
+[node name="Plataforma14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6524.94, 251.128 )
+scale = Vector2( 0.6, 1 )
+
+[node name="Plataforma15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6873.07, 254.492 )
+scale = Vector2( 0.6, 1 )
+
+[node name="Parede2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 7053.74, 28.4939 )
+rotation = 1.5708
+
+[node name="CarroGrosso" parent="." instance=ExtResource( 2 )]
+position = Vector2( 206.861, 87.4532 )
+
+[node name="Camera2D" type="Camera2D" parent="CarroGrosso"]
+current = true
