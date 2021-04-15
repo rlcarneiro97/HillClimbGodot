@@ -6,6 +6,8 @@
 radius = 58.8242
 
 [node name="Roda" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 13
 gravity_scale = 3.0
 
 [node name="Sprite" type="Sprite" parent="."]
