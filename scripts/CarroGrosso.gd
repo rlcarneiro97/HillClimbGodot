@@ -19,7 +19,7 @@ func _ready():
 
 func _process(delta):
 	
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("reload"):
 		get_tree().reload_current_scene()
 		
 	if Input.is_action_just_pressed("TracaoDianteira"):

@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 26.1123
-height = 18.5127
+height = 0.0
 
 [node name="Carro" type="RigidBody2D"]
 gravity_scale = 3.0
@@ -19,6 +19,8 @@ texture = ExtResource( 1 )
 
 [node name="CabecaDela" type="RigidBody2D" parent="."]
 position = Vector2( -0.793701, 0 )
+z_index = 1
+z_as_relative = false
 gravity_scale = 3.0
 
 [node name="Cabeca" type="Sprite" parent="CabecaDela"]
@@ -27,23 +29,23 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CabecaDela"]
-position = Vector2( -31.5899, -73.6611 )
+position = Vector2( -31.5899, -80.6611 )
 shape = SubResource( 1 )
 
-[node name="PescocoDir" type="PinJoint2D" parent="CabecaDela"]
-position = Vector2( -43.9384, -36 )
-node_a = NodePath("..")
-node_b = NodePath("../..")
-softness = 2.0
+[node name="PinJoint2D" type="PinJoint2D" parent="CabecaDela"]
+position = Vector2( -26.8422, -108.142 )
+node_a = NodePath("../..")
+node_b = NodePath("..")
+softness = 10.0
 
-[node name="PescocoEsq" type="PinJoint2D" parent="CabecaDela"]
-position = Vector2( -17.5969, -36 )
-node_a = NodePath("..")
-node_b = NodePath("../..")
-softness = 2.0
+[node name="PinJoint2D2" type="PinJoint2D" parent="CabecaDela"]
+position = Vector2( -26.8422, -53.1417 )
+node_a = NodePath("../..")
+node_b = NodePath("..")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 42.7965, -23.6544, 91.4915, -10.1696, 117.712, -15.4137, 124.454, 12.305, 131.197, 22.7931, 143.932, 25.0406, 152.922, 37.027, 143.932, 52.0101, 96.7356, 52.7593, 95.2372, 34.0304, 83.9999, 20.5457, 66.7694, 10.8067, 43.5457, 13.8033, 33.0575, 24.2914, 24.0677, 37.7762, 23.3185, 49.7626, -43.3562, 50.5118, -43.3562, 37.7762, -51.5969, 23.5423, -62.8342, 14.5524, -80.0647, 10.0575, -100.292, 15.3016, -111.529, 26.5389, -115.275, 40.0237, -116.024, 51.261, -142.244, 50.5118, -151.983, 41.522, -147.489, 28.7863, -135.502, 25.0406, -119.021, -2.6781, -78.5664, -22.1561, -74.8206, -36.39, -23.129, -28.8985, 39.0507, -37.1392 )
+visible = false
+polygon = PoolVector2Array( 42.7965, -23.6544, 91.4915, -10.1696, 117.712, -15.4137, 124.454, 12.305, 131.197, 22.7931, 143.932, 25.0406, 152.922, 37.027, 143.932, 52.0101, 96.7356, 52.7593, 95.2372, 34.0304, 83.9999, 20.5457, 66.7694, 10.8067, 43.5457, 13.8033, 33.0575, 24.2914, 24.0677, 37.7762, 23.3185, 49.7626, -43.3562, 50.5118, -43.3562, 37.7762, -51.5969, 23.5423, -62.8342, 14.5524, -80.0647, 10.0575, -100.292, 15.3016, -111.529, 26.5389, -115.275, 40.0237, -116.024, 51.261, -142.244, 50.5118, -151.983, 41.522, -147.489, 28.7863, -135.502, 25.0406, -119.021, -2.6781, -78.5664, -22.1561, -74.8206, -36.39, -59.7804, -33.6752, -52.6452, -46.7565, -29.4556, -53.8918, 9.25778, -33.1907, 39.0507, -37.1392 )
 
 [node name="CursoRodaFrente" type="GrooveJoint2D" parent="."]
 position = Vector2( 60, 65 )
