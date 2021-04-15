@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/prefabs/Plataforma.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/prefabs/CarroGrosso.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/prefabs/Carro.tscn" type="PackedScene" id=2]
 
 [node name="Main" type="Node2D"]
 
@@ -67,8 +67,9 @@ scale = Vector2( 0.6, 1 )
 position = Vector2( 7053.74, 28.4939 )
 rotation = 1.5708
 
-[node name="CarroGrosso" parent="." instance=ExtResource( 2 )]
-position = Vector2( 206.861, 87.4532 )
+[node name="Carro" parent="." instance=ExtResource( 2 )]
+position = Vector2( 254, 95 )
+rotation = 0.00937995
 
-[node name="Camera2D" type="Camera2D" parent="CarroGrosso"]
+[node name="Camera2D" type="Camera2D" parent="Carro"]
 current = true
