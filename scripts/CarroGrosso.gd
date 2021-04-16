@@ -14,8 +14,10 @@ const inclinacaoTraseira = Vector2(1, 1)
 const CONST_DE_INCLINACAO = 6.5
 
 func _ready():
-	$RodaFrente.friction = taxaFriccaoRoda
-	$RodaTras.friction = taxaFriccaoRoda
+#	$RodaFrente.friction = taxaFriccaoRoda
+#	$RodaTras.friction = taxaFriccaoRoda
+	$RodaFrente.set_friction(taxaFriccaoRoda)
+	$RodaTras.set_friction(taxaFriccaoRoda)
 
 func _process(delta):
 	
@@ -34,20 +36,20 @@ func _process(delta):
 		if $RodaFrente.angular_velocity < rotacaoMotor and $RodaTras.angular_velocity < rotacaoMotor:
 			if tipoTracao == 1:
 				$RodaFrente.apply_torque_impulse(torque)
-				print($RodaFrente.angular_velocity)
+#				print($RodaFrente.angular_velocity)
 				
 			elif tipoTracao == 2:
 				$RodaTras.apply_torque_impulse(torque)
-				print($RodaTras.angular_velocity)
+#				print($RodaTras.angular_velocity)
 				
 			elif tipoTracao == 3:
 				$RodaFrente.apply_torque_impulse(torque/2)
 				$RodaTras.apply_torque_impulse(torque/2)
 				
-				if $RodaFrente.angular_velocity > $RodaTras.angular_velocity:
-					print($RodaFrente.angular_velocity)
-				else:
-					print($RodaTras.angular_velocity)
+#				if $RodaFrente.angular_velocity > $RodaTras.angular_velocity:
+#					print($RodaFrente.angular_velocity)
+#				else:
+#					print($RodaTras.angular_velocity)
 		
 		$RodaTras.apply_impulse(inclinacaoTraseira, inclinacaoTraseira * CONST_DE_INCLINACAO)
 		
@@ -56,19 +58,19 @@ func _process(delta):
 		if $RodaFrente.angular_velocity > -rotacaoMotor and $RodaTras.angular_velocity > -rotacaoMotor:
 			if tipoTracao == 1:
 				$RodaFrente.apply_torque_impulse(-torque)
-				print($RodaFrente.angular_velocity)
+#				print($RodaFrente.angular_velocity)
 				
 			elif tipoTracao == 2:
 				$RodaTras.apply_torque_impulse(-torque)
-				print($RodaTras.angular_velocity)
+#				print($RodaTras.angular_velocity)
 				
 			elif tipoTracao == 3:
 				$RodaFrente.apply_torque_impulse(-torque/2)
 				$RodaTras.apply_torque_impulse(-torque/2)
 				
-				if $RodaFrente.angular_velocity > $RodaTras.angular_velocity:
-					print($RodaFrente.angular_velocity)
-				else:
-					print($RodaTras.angular_velocity)
+#				if $RodaFrente.angular_velocity > $RodaTras.angular_velocity:
+#					print($RodaFrente.angular_velocity)
+#				else:
+#					print($RodaTras.angular_velocity)
 			
 		$RodaFrente.apply_impulse(inclinacaoDianteira, inclinacaoDianteira * CONST_DE_INCLINACAO)
