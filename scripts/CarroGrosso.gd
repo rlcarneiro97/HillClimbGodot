@@ -1,23 +1,22 @@
 extends RigidBody2D
 
 #padrao é 500 para tracao dianteira
-export var torque := 500
+export var torque := 600
 #padrao é 25.0 para tracao dianteira
 var rotacaoMotor := 25.0
 #1 - Tracao dianteira / 2 - Tracao traseira / 3 - 4X4
 var tipoTracao := 1
 #padrao é 0.4 p/ qualquer tipo de tracao
-var taxaFriccaoRoda := 0.5
+#var taxaFriccaoRoda := 0.9
 
 const inclinacaoDianteira = Vector2(-1, 1)
 const inclinacaoTraseira = Vector2(1, 1)
 const CONST_DE_INCLINACAO = 6.5
 
 func _ready():
-#	$RodaFrente.friction = taxaFriccaoRoda
-#	$RodaTras.friction = taxaFriccaoRoda
-	$RodaFrente.set_friction(taxaFriccaoRoda)
-	$RodaTras.set_friction(taxaFriccaoRoda)
+	pass
+#	$RodaFrente.set_friction(taxaFriccaoRoda)
+#	$RodaTras.set_friction(taxaFriccaoRoda)
 
 func _process(delta):
 	
