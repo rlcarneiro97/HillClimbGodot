@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 #padrao é 500 para tracao dianteira
-export var torque := 1000
+export var torque := 600
 #padrao é 25.0 para tracao dianteira
 var rotacaoMotor := 25.0
 #1 - Tracao dianteira / 2 - Tracao traseira / 3 - 4X4
