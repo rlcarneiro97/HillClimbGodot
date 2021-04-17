@@ -68,7 +68,7 @@ position = Vector2( 7053.74, 28.4939 )
 rotation = 1.5708
 
 [node name="Carro" parent="." instance=ExtResource( 2 )]
-position = Vector2( 228.586, 139.691 )
+position = Vector2( 213.574, 136.154 )
 
 [node name="Camera2D" type="Camera2D" parent="Carro"]
 current = true
