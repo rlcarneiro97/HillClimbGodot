@@ -87,10 +87,10 @@ position = Vector2( -80, 63 )
 position = Vector2( 60, 38 )
 node_a = NodePath("..")
 node_b = NodePath("../DiscoFrente")
-stiffness = 50.0
+stiffness = 40.0
 
 [node name="MolaTras" type="DampedSpringJoint2D" parent="."]
 position = Vector2( -80, 38 )
 node_a = NodePath("..")
 node_b = NodePath("../DiscoTras")
-stiffness = 50.0
+stiffness = 40.0
