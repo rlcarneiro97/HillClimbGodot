@@ -49,29 +49,33 @@ polygon = PoolVector2Array( 42.7965, -23.6544, 91.4915, -10.1696, 106.645, -0.24
 position = Vector2( 60, 38 )
 node_a = NodePath("..")
 node_b = NodePath("../DiscoFrente")
+bias = 0.9
 length = 25.0
-initial_offset = 12.0
+initial_offset = 20.0
 
 [node name="GrooveFrente2" type="GrooveJoint2D" parent="."]
 position = Vector2( 60, 63 )
 node_a = NodePath("..")
 node_b = NodePath("../DiscoFrente")
+bias = 0.9
 length = 25.0
-initial_offset = 12.0
+initial_offset = 20.0
 
 [node name="GrooveTras1" type="GrooveJoint2D" parent="."]
 position = Vector2( -80, 38 )
 node_a = NodePath("..")
 node_b = NodePath("../DiscoTras")
+bias = 0.9
 length = 25.0
-initial_offset = 12.0
+initial_offset = 20.0
 
 [node name="GrooveTras2" type="GrooveJoint2D" parent="."]
 position = Vector2( -80, 63 )
 node_a = NodePath("..")
 node_b = NodePath("../DiscoTras")
+bias = 0.9
 length = 25.0
-initial_offset = 12.0
+initial_offset = 20.0
 
 [node name="DiscoFrente" parent="." instance=ExtResource( 4 )]
 position = Vector2( 60, 63 )
@@ -83,8 +87,10 @@ position = Vector2( -80, 63 )
 position = Vector2( 60, 38 )
 node_a = NodePath("..")
 node_b = NodePath("../DiscoFrente")
+stiffness = 50.0
 
 [node name="MolaTras" type="DampedSpringJoint2D" parent="."]
 position = Vector2( -80, 38 )
 node_a = NodePath("..")
 node_b = NodePath("../DiscoTras")
+stiffness = 50.0
