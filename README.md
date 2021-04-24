@@ -2,11 +2,11 @@
 Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 
 ## Problema
-A um tempo atrás quis replicar o jogo Hill Climb Racing para entender como funcionava, porém, me deparei com um problema. A Godot Engine na versão 3.2.3 não possui um nó especifico responsável por simular uma suspensão de um veículo em 2D, diferentemente da Unity que tem um componente especifico para essa função. Então como aplicar a física o mais próximo possível a uma suspensão?! Então fui pesquisar sobre.
+Há um tempo atrás quis replicar o jogo Hill Climb Racing para entender como funcionava, porém, me deparei com um problema. A Godot Engine na versão 3.2.3 não possui um nó especifico responsável por simular uma suspensão de um veículo em 2D, diferentemente da Unity que tem um componente especifico para essa função. Então como aplicar a física o mais próximo possível a uma suspensão?! Então fui pesquisar sobre.
 Nessa versão da Engine, existem 3 tipos de nós para lidar com molas, o DampedSpringJoint2D, GrooveJoint2D e o PinJoint2D. O primeiro simula uma espécie de elástico de escritório, também chamado de “gominha”. Portanto, este pode se movimentar para o eixo X e Y, o que não o torna bom para simular uma suspensão que só se contrai na vertical. O Groove Joint já é diferente. O comportamento dele é como uma espécie de fenda, onde o corpo só pode se movimentar linearmente. E por ultimo o Pin Joint.
 
 <p align="center">
-<img src="https://github.com/rlcarneiro97/HillClimbGodot/blob/main/readme/2193454_1.jpg" width="400">
+	<img src="https://github.com/rlcarneiro97/HillClimbGodot/blob/main/readme/2193454_1.jpg" width="400">
 </p>
 
 Vamos supor que tenhamos um Papai Noel com uma mola presa em baixo dele. Se você prender a mola ao chão com uma mão, olhar por cima, e com a outra mão mexer o “bom velhinho” para os lados, você verá o funcionamento do Pin Joint. Ele nada mais é do que uma mola presa a um ponto no espaço, onde ela se conecta a outro objeto, e esse objeto conectado recebe amortecimento do eixo X ou Y, semelhante ao Damped Spring. Ele possui também a possibilidade de deixar a rigidez muito alta, o que permite ser um elo entre objetos, como uma dobradiça.
@@ -16,7 +16,7 @@ Alguns já devem ter percebido que há a possibilidade de unir alguns dos nós j
 A principio eu tentei conectar somente um Groove Joint pra cada roda. Esse nó unia o Carro a Roda e limitava sua movimentação só na vertical. Mas isso não tinha amortecimento, portanto eu coloquei um Pin Joint para cada Groove como filho dele, esperando que amortecesse só na vertical, já que o Pin Joint seria o filho do Groove. O Pin Joint uniu o Carro as Rodas, fornecendo um elo necessário para manter a roda na posição certa. Infelizmente o resultado não deu certo, pois o que acontecia era que a roda podia subir e descer, mas também havia movimentos de todas direções do Pin Joint. 
 
 <p align="center">
-<img src="https://github.com/rlcarneiro97/HillClimbGodot/blob/main/readme/papai%20noel2.png" width="400">
+	<img src="https://github.com/rlcarneiro97/HillClimbGodot/blob/main/readme/papai%20noel2.png" width="400">
 </p>
 
 A forma como apliquei é semelhante a colocar um limitador vertical para o Papai Noel preso ao Pin Joint. Portanto, não só o Pin Joint se movia em todas direções, mais o Papai Noel também poderia se mover de cima pra baixo, o que dava a falsa impressão de que era um simples erro a ser corrigido.
