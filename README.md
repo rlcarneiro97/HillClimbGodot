@@ -36,7 +36,7 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 	qual se deve seguir.
 </p>
 <p align="justify">
-	A principio eu tentei conectar somente um Groove Joint pra cada roda. Esse nó unia o Carro a Roda e limitava sua movimentação só na 
+	De início eu tentei conectar somente um Groove pra cada roda. Esse nó unia o Carro a Roda e limitava sua movimentação só na 
 	vertical. Como não há amortecimento, eu coloquei um Pin Joint para cada Groove como filho dele, esperando que amortecesse só na 
 	vertical, já que o Pin Joint seria o filho do Groove. O Pin Joint uniu o Carro as Rodas, fornecendo um elo necessário para manter 
 	a roda na posição certa. Infelizmente o resultado não deu certo, pois o que acontecia era que a roda podia subir e descer, mas 
