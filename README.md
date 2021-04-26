@@ -61,7 +61,7 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 
 ## Solução
 
-### Visão Geral
+#### Visão Geral
 <p align="justify">
 	A solução tinha a mesma idéia que a minha, porém foi utilizado nós diferentes e com conexões mais complexas. De inicio eu testei com o 
 	Damped Spring, mas eu não conseguia fazer a roda ficar no lugar, por isso usei o Pin Joint (e ainda da forma errada). 
@@ -129,4 +129,19 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 	Portanto, colocaremos dois Pin Joints rígidos para cada roda, cada um conectando a Roda ao Disco. E como o Disco está conectado ao Carro, 
 	todos objetos estão unidos. Como eu coloquei a Cena da Roda dentro da Cena do Disco, então tive que colocar um Pin Joint na Cena do Disco 
 	para que as Rodas não ficassem soltas. Então, quando o Carro chama o Disco, não é necessário retrabalho de unir esses componentes.
+</p>
+
+## Controles para Teste
+
+<p align=justify>
+	É possível testar a movimentação do veículo, bem como três tipos de tração que podem ser trocadas em tempo de execução somente para teste. 
+	Os comandos estão abaixo:
+</p>
+<p align=justify>
+	1. Seta da esquerda: Acelera o veículo para frente.
+	2. Seta da direita: Acelera o veiculo para trás.
+	3. Tecla R: Reinicia a Cena.
+	4. Tecla 1: Aciona tração dianteira(Padrão).
+	5. Tecla 2: Aciona tração traseira.
+	6. Tecla 3: Aciona tração 4X4.
 </p>
