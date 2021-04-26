@@ -105,7 +105,9 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 	Certo, a Roda está na Cena, mas não está conectada ao Carro. Como conectar? Porque o Disco existe mesmo?! Primeiro a resposta do Disco. 
 	O Disco existe porque se tudo se conectasse diretamente na Roda, quando aplicássemos um torque a roda, não só a roda ganharia velocidade 
 	angular, mas também todo conjunto conectado a ela. E girar a suspensão com a roda não é uma boa idéia, na verdade, a roda nem giraria. 
-	Ficaria travada. Para resolver isso é preciso de um objeto intermediário, que não bloqueia a aplicação de torque.
+</p>
+<p align="justify">	
+	Para resolver esses problema do sistema travado, é preciso de um objeto intermediário, que não bloqueia a aplicação de torque.
 	Bom, o único nó que nos dá liberdade de rotacionar algo assim é o Pin Joint. Ele pode ficar rígido como uma tachinha presa num quadro 
 	bem no centro, e permitir a rotação do que estiver preso lá. 
 </p>
