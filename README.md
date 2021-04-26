@@ -137,9 +137,10 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 	É possível testar a movimentação do veículo, bem como três tipos de tração que podem ser trocadas em tempo de execução somente para teste. 
 	Os comandos estão abaixo:
 </p>
-	1. Seta da esquerda: Acelera o veículo para frente.
-	2. Seta da direita: Acelera o veiculo para trás.
-	3. Tecla R: Reinicia a Cena.
-	4. Tecla 1: Aciona tração dianteira(Padrão).
-	5. Tecla 2: Aciona tração traseira.
-	6. Tecla 3: Aciona tração 4X4.
+
+1. Seta da esquerda: Acelera o veículo para frente.
+2. Seta da direita: Acelera o veiculo para trás.
+3. Tecla R: Reinicia a Cena.
+4. Tecla 1: Aciona tração dianteira(Padrão).
+5. Tecla 2: Aciona tração traseira.
+6. Tecla 3: Aciona tração 4X4.
