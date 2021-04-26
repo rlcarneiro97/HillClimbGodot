@@ -60,12 +60,17 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 </p>
 
 ## Solução
+
+### Visão Geral
 <p align="justify">
 	A solução tinha a mesma idéia que a minha, porém foi utilizado nós diferentes e com conexões mais complexas. De inicio eu testei com o 
 	Damped Spring, mas eu não conseguia fazer a roda ficar no lugar, por isso usei o Pin Joint (e ainda da forma errada). 
 	O segredo estava em criar 2 Groove Joints para cada roda, utilizar um Pin Joint rígido para cada roda, e utilizar um objeto intermediário, 
 	que faria a ligação entre Carro e Roda, que chamei de “Disco”. 
 </p>
+
+### Montando a Estrutura
+
 <p align="justify">
 	Tá, mas porque dois Groove Joints?! Simples! Se você colocar somente um Groove Joint, você até consegue conectar o Carro a Roda, mas o 
 	próprio Groove Joint pode rotacionar por alguma força qualquer, inclusive com a própria força gravitacional do jogo. Então, como dar 
@@ -89,18 +94,27 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 	o Bias pra o objeto acompanhar o movimento de forma correta. Isso faz com que a roda volte mais rápido para o local de onde deve estar. 
 	Por fim, todas as conexões do Groove Joint serão feitas entre o Carro e o “Disco”, e o motivo será explicado abaixo.
 </p>
+
+### Configurando a Suspensão
+
 <p align="justify">
 	Com as conexões entre Carro e Disco feitas, é preciso colocar agora um nó que permita amortecimento, portanto, é preciso de dois 
 	Damped Spring para cada roda. Cada um deles liga o Carro ao Disco correspondente. Perceba que nada é ligado a Roda ainda. As 
 	configurações das molas são Length 50, Rest Length 0, Stiffness 40, Damping 1. Isso pode variar dependendo da massa do objeto e 
 	da gravidade aplicada.
 </p>
+
+### Implementação das Rodas
+
 <p align="justify">
 	Com o amortecimento feito, agora é preciso colocar as Rodas. No meu projeto eu optei por colocar as Rodas na cena do Disco, assim, 
 	quando eu chamasse a Cena do Disco no Carro, a Roda já viria junto na posição correta. Entretanto, é possível fazer a Roda na 
 	própria Cena do Carro mesmo, de forma separada. Se for feito separado, somente o código do Carro que deve ser alterado, mudando o 
 	caminho da Roda.
 </p>
+
+### Conexão com o Disco
+
 <p align="justify">
 	Certo, a Roda está na Cena, mas não está conectada ao Carro. Como conectar? Porque o Disco existe mesmo?! Primeiro a resposta do Disco. 
 	O Disco existe porque se tudo se conectasse diretamente na Roda, quando aplicássemos um torque a roda, não só a roda ganharia velocidade 
