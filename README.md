@@ -69,7 +69,7 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 	que faria a ligação entre Carro e Roda, que chamei de “Disco”. 
 </p>
 
-### Montando a Estrutura
+#### Montando a Estrutura
 
 <p align="justify">
 	Tá, mas porque dois Groove Joints?! Simples! Se você colocar somente um Groove Joint, você até consegue conectar o Carro a Roda, mas o 
@@ -95,7 +95,7 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 	Por fim, todas as conexões do Groove Joint serão feitas entre o Carro e o “Disco”, e o motivo será explicado abaixo.
 </p>
 
-### Configurando a Suspensão
+#### Configurando a Suspensão
 
 <p align="justify">
 	Com as conexões entre Carro e Disco feitas, é preciso colocar agora um nó que permita amortecimento, portanto, é preciso de dois 
@@ -104,7 +104,7 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 	da gravidade aplicada.
 </p>
 
-### Implementação das Rodas
+#### Implementação das Rodas
 
 <p align="justify">
 	Com o amortecimento feito, agora é preciso colocar as Rodas. No meu projeto eu optei por colocar as Rodas na cena do Disco, assim, 
@@ -113,7 +113,7 @@ Implementando mecânica da suspensão do Hill Climb Racing na Godot 3.2.3
 	caminho da Roda.
 </p>
 
-### Conexão com o Disco
+#### Conexão com o Disco
 
 <p align="justify">
 	Certo, a Roda está na Cena, mas não está conectada ao Carro. Como conectar? Porque o Disco existe mesmo?! Primeiro a resposta do Disco. 
